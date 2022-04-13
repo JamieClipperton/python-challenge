@@ -81,6 +81,21 @@ with open(budget_csv, newline="") as csvfile:
     print(f"Greatest Increase in Profits: {hgt_inc_mth} (${hgt_inc})")
     print(f"Greatest Decrease in Losses: {lwt_inc_mth} (${lwt_inc})")
 
+    #export to text file with the results
+
+bank_file = 'Analysis/bank_analysis.txt'
+with open(bank_file, "w") as outfile:
+    outfile.write("Financial Analysis\n")
+    outfile.write("-------------------------------------------------------------------- \n")
+    outfile.write(f"Total Months: {mth_yrs_count}\n")
+    outfile.write(f"Total: ${total_profit}\n")
+    outfile.write(f"Average Change: ${avg_chg}\n")
+    outfile.write(f"Greatest Increase in Profits: {hgt_inc_mth} (${hgt_inc}\n")
+    outfile.write(f"Greatest Decrease in Losses: {lwt_inc_mth} (${lwt_inc}\n")
+
+
+
+
 
 
 
