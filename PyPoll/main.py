@@ -61,6 +61,20 @@ with open(poll_csv, newline="") as csvfile:
     #print(li_per)
     otool_per = round(otool_vo / (tot_vot-1)*100, 3)
     #print(otool_per)
+    winner = ""
+    win_tot = 0
+    if len(khan_con)>win_tot:
+        win_tot=len(khan_con)
+        winner = "Khan"
+    if len(correy_con)>win_tot:
+        win_tot=len(correy_con)
+        winner = "Correy"
+    if len(li_con)>win_tot:
+        win_tot=len(li_con)
+        winner = "Li"
+    if len(otool_con)>win_tot:
+        win_tot=len(otool_con)
+        winner = "O'Tooley"
 
     print(f"Khan: {khan_per}({kh_vo})")
     print(f"Correy: {cor_per}({co_vo})")
@@ -69,7 +83,7 @@ with open(poll_csv, newline="") as csvfile:
 
     print("---------------------------------------")
 
-    print("Winner: Khan")
+    print(f"Winner: {winner}")
 
     print("---------------------------------------")
 
@@ -84,7 +98,7 @@ with open(poll_file, "w") as outfile:
     outfile.write(f"Li: {li_per}({li_vo})\n")
     outfile.write(f"O'Tooley: {otool_per}({otool_vo})\n")
     outfile.write("----------------------------------------- \n")
-    outfile.write("Winner: Khan \n")
+    outfile.write(f"Winner:  {winner}\n")
     outfile.write("------------------------------------------\n")
 
 
